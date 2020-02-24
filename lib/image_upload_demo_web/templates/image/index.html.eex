@@ -1,0 +1,1 @@
+<h4><%= link "上傳圖片", to: Routes.image_path(@conn, :new) %></h4>
