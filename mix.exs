@@ -33,6 +33,8 @@ defmodule ImageUploadDemo.MixProject do
   # Type `mix help deps` for examples and options.
   defp deps do
     [
+      {:arc, "~> 0.11.0"},
+      {:arc_ecto, "~> 0.11.3"},
       {:phoenix, "~> 1.4.12"},
       {:phoenix_pubsub, "~> 1.1"},
       {:phoenix_ecto, "~> 4.0"},
