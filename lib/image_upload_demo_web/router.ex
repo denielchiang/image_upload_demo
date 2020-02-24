@@ -17,6 +17,7 @@ defmodule ImageUploadDemoWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :index
+    resources "/images", ImageController
   end
 
   # Other scopes may use custom stacks.
