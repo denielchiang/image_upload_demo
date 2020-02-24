@@ -14,10 +14,10 @@ defmodule ImageUploadDemoWeb.ImageController do
 
   def create(conn, %{"image" => image_params}) do
 	case ImageManager.create_image(image_params) do
-	  {:ok, image} ->
+	  {:ok, _image} ->
 		conn
 		|> put_flash(:info, "圖片上傳成功")
-		|> redirect(to: Routes(conn, :index))
+		|> redirect(to: Routes.image_path(conn, :index))
 	  {:error, changeset} ->
 		conn
 		|> put_flash(:error, "圖片上傳失敗")
