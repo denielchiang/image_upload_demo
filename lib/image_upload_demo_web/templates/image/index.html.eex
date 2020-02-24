@@ -1,1 +1,5 @@
 <h4><%= link "上傳圖片", to: Routes.image_path(@conn, :new) %></h4>
+
+<%= for image <- @images do %>
+  <img src="<%= ImageUploadDemo.ImageUploader.url({image.path, image})%>"><br>
+<% end %>

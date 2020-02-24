@@ -4,24 +4,26 @@ defmodule ImageUploadDemoWeb.ImageController do
   alias ImageUploadDemo.ImageManager
 
   def index(conn, _params) do
-	render(conn, "index.html")
+    images = ImageManager.list_images()
+    render(conn, "index.html", images: images)
   end
 
   def new(conn, _) do
-	changeset = ImageManager.change_image()
-	render(conn, "new.html", changeset: changeset)
+    changeset = ImageManager.change_image()
+    render(conn, "new.html", changeset: changeset)
   end
 
   def create(conn, %{"image" => image_params}) do
-	case ImageManager.create_image(image_params) do
-	  {:ok, _image} ->
-		conn
-		|> put_flash(:info, "圖片上傳成功")
-		|> redirect(to: Routes.image_path(conn, :index))
-	  {:error, changeset} ->
-		conn
-		|> put_flash(:error, "圖片上傳失敗")
-		|> render("new.html", changeset: changeset)
-	end
+    case ImageManager.create_image(image_params) do
+      {:ok, _image} ->
+        conn
+        |> put_flash(:info, "圖片上傳成功")
+        |> redirect(to: Routes.image_path(conn, :index))
+
+      {:error, changeset} ->
+        conn
+        |> put_flash(:error, "圖片上傳失敗")
+        |> render("new.html", changeset: changeset)
+    end
   end
 end
