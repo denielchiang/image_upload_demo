@@ -1,4 +1,5 @@
 # Elixir / Phoenix - 上傳圖片到本地端 (with ARC)
+  [![HitCount](http://hits.dwyl.com/denielchiang/denielchiang/image_upload_demo.svg)](http://hits.dwyl.com/denielchiang/denielchiang/image_upload_demo)
 
 當我們做Web Apps的時候，很常會有圖片上傳的功能，我們來試試看Elixir / Phoenix 怎麼做
 
